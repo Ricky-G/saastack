@@ -71,7 +71,7 @@ public class MigrationsApiSpec
                     req => req.SetHMACAuth(request, "asecret"));
 
             result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-            result.Content.Error.Detail.Should().Be(Resources.SubscriptionRoot_ProviderMismatch);
+            result.Content.Error.Detail.Should().Be(Resources.SubscriptionRoot_InstalledProviderMismatch);
         }
 
         private static void OverrideDependencies(IServiceCollection services)
